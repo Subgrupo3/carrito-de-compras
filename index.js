@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-  let agregarCelular = document.getElementById("agregarCelular");
-  let agregarComputadora = document.getElementById("agregarComputadora");
-  let agregarTablet = document.getElementById("agregarTablet");
+  let agregarCelular = document.getElementById("agregarCelular")
+  let agregarComputadora = document.getElementById("agregarComputadora")
+  let agregarTablet = document.getElementById("agregarTablet")
   let tabla = document.getElementById("tablaCarrito");
 
   function agregarProducto(nombre, descripcion, precio) {
@@ -23,24 +23,54 @@ document.addEventListener("DOMContentLoaded", function() {
     producto.appendChild(celdaPrecio);
 
     // Agregar la fila (producto) a la tabla (tablaCarrito)
-    tabla.appendChild(producto);
-  }
+  tabla.getElementsByTagName('tbody')[0].appendChild(producto);
+
+  }})
 
 
 
   agregarCelular.addEventListener("click", function() {
-    agregarProducto(document.getElementById("nombreCelular").textContent, document.getElementById("descripcionCelular").textContent, document.getElementById("precioCelular"));
-  });
+    agregarProducto(document.getElementById("celular")).textContent, 
+    document.getElementById("descripcionCelular").textContent, 
+    document.getElementById("precioCelular").textContent;
+ });
 
   agregarComputadora.addEventListener("click", function() {
-    agregarProducto(document.getElementById("nombreC"), document.getElementById("descripcionTablet"), document.getElementById("precioTablet"));
+    agregarProducto(document.getElementById("computadora")).textContent, 
+    document.getElementById("descripcionComputadora").textContent, 
+    document.getElementById("precioComputadora").textContent;
   });
 
   agregarTablet.addEventListener("click", function() {
-    agregarProducto(document.getElementById("nombreTablet"), document.getElementById("descripcionTablet"), document.getElementById("precioTablet");
-  });
-
+    agregarProducto(document.getElementById("tablet")).textContent, 
+    document.getElementById("descripcionTablet").textContent, 
+    document.getElementById("precioTablet").textContent;
 });
+
+;
+
+document.addEventListener("DOMContentLoaded", function() {
+  let formulario = document.getElementById("formularioCliente");
+  let nombreCliente = document.getElementById("nombreCliente");
+  let rutCliente = document.getElementById("rutCliente");
+  let productoSelect = document.getElementById("producto");
+
+
+formulario.addEventListener("submit", function(event) {
+  // Obtenemos el valor del RUT y el nombre del cliente
+  let rut = rutCliente.value;
+  let nombre = nombreCliente.value;
+//Comprobamos si el cliente ingresó un RUT.
+  if (rut !== " ") {
+    alert("RUT: " + rut + "Nombre " + nombre);
+
+  } else {
+    alert ("Cliente: Consumidor Final");
+  }
+
+})
+
+})
 
 
 

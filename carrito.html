@@ -11,6 +11,30 @@
   <div class="container mt-5">
     <p>USTED ESTÁ AQUÍ: <span class="text-danger">INICIO</span> >>CESTA DE COMPRA</p>
     <div class="row">
+      <div class="col-md-6">
+        <form id="formularioCliente">
+          <div class="form-group">
+            <label for="nombreCliente">Nombre del Cliente</label>
+            <input type="text" class="form-control" id="nombreCliente">
+          </div>
+          <div class="form-group">
+            <label for="rutCliente">RUT del Cliente</label>
+            <input type="text" class="form-control" id="rutCliente">
+          <button type="submit" class="btn btn-primary">Enviar Datos</button>
+          </form>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="producto">Productos</label>
+        <select class="form-control" id="producto"> 
+        <option value="producto1">Celular</option>
+        <option value="producto2">Notebook</option>
+        <option value="producto3">Tablet</option>
+        </select>
+      </div>
+
+
+    <div class="row">
         <div class="col lg-8">
     <table class="table" id="tablaCarrito">
       <thead class="text-danger"> 
@@ -22,7 +46,7 @@
         </tr> 
       </thead>
       <tbody>
-    
+    <!-- Aqui se agregan los productos-->
       </tbody>
     </table>
 
@@ -31,10 +55,11 @@
       <button class="btn btn-outline-dark">Actualizar Cesta</button>
     </div>
     <div class="container">
-    <a class="text-danger" href="index.html">Volver al inicio</a>
+    <a class="btn btn-outline-danger" href="index.html">Volver al inicio</a>
     <button class="btn btn-success">Comprar</button>
     </div>
 
     <script src="index.js"></script>
+    <script src="carrito.js"></script>
 </body>
 </html>
