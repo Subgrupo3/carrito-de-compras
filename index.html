@@ -12,21 +12,24 @@
     <header class="bg-dark text-light text-center py-4">
         <h1 class="display-4">Electro<span class="text-warning">T</span>ech</h1>
     </header>
-    
+    <main>
     <!-- Carrito de compras -->
     <div class="container mt-4">
-        <div class="row">
+        <div class="row py-5">
             
             <!-- Catálogo de productos -->
             <div class="col-md-12">
-                <h2 class="text-center">Catálogo de Productos</h2>
                 <div class="card-deck">
+                    <div class="col-md-12 text-center">
+                        <h2 class="text-center">Catálogo de Productos</h2>
+                    </div>
+                    
                    <!-- Producto 1 -->
                    <div class="card d-flex">
                     <img class="card-img-top" src="https://depor.com/resizer/CBA735sYQcxBvQqk0z47ZVqw4cI=/1200x675/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B42EPAPPUJFKDKHE54NSRKK2CA.jpg" alt="Celular">
                     <div class="card-body flex-column">
                         <h2 class="card-title">Celular</h2>
-                        <p class="card-text">Con el respaldo de una serie de tecnologías de desarrollo propio y algorítmos de optimización, brinda 36 meses de un excelente rendimiento contínuo y fluído.</p>
+                        <p class="card-text">Con el respaldo de una serie de tecnologías de desarrollo propio y algorítmos de optimización<span class="hide" id="hideText_1"> ,brinda 36 meses de un excelente rendimiento contínuo y fluído.</span><button class="mx-1 text-warning" id="hideText_btn_1">Ver más</button></p>
                         <p class="card-text">US$1500</p>
                         <button class="btn btn-primary" onclick="agregarAlCarrito('Celular', 1500)">Agregar al Carrito</button>
                     </div>
@@ -36,7 +39,7 @@
                     <img class="card-img-top" src="https://www.apple.com/v/macbook-air/q/images/meta/macbook-air_overview__fugeevgwjuie_og.png?202309261329" alt="Notebook">
                     <div class="card-body flex-column">
                         <h2 class="card-title">Notebook</h2>
-                        <p class="card-text">La notebook es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.</p>
+                        <p class="card-text">La notebook es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el <span class="hide" id="hideText_2"> escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.</span><button class="mx-1 text-warning" id="hideText_btn_2">Ver más</button></p>
                         <p class="card-text">US$2000</p>
                         <button class="btn btn-primary" onclick="agregarAlCarrito('Notebook', 2000)">Agregar al Carrito</button>
                     </div>
@@ -46,7 +49,7 @@
                     <img class="card-img-top" src="https://istore.gt/wp-content/uploads/2023/02/3EC001117.jpg" alt="Tablet">
                     <div class="card-body flex-column">
                         <h2 class="card-title">Tablet</h2>
-                        <p class="card-text">Esta tablet es la compañera ideal, con capacidad de sobra para cada una de tus actividades. El diseño delgado, compacto y portátil, con facilidad para sostener en una mano, lo convierte en una combinación perfecta de rendimiento y versatilidad.</p>
+                        <p class="card-text">Esta tablet es la compañera ideal, con capacidad de sobra para cada una de tus actividades. <span class="hide" id="hideText_3"> El diseño delgado, compacto y portátil, con facilidad para sostener en una mano, lo convierte en una combinación perfecta de rendimiento y versatilidad.</span> <button class="mx-1 text-warning" id="hideText_btn_3">Ver más</button></p>
                         <p class="card-text">US$800</p>
                         <button class="btn btn-primary" onclick="agregarAlCarrito('Tablet', 800)">Agregar al Carrito</button>
                     </div>
@@ -75,6 +78,17 @@
             </div>
         </div>
     </div>
+</main>
+    <footer class="text-muted bg-dark py-2">
+        <div class="container d-flex justify-content-between align-items-center mt-3">
+          <h5 class="text-light text-center mx-auto">Este sitio forma parte de <a class="text-warning" href="https://jovenesaprogramar.edu.uy/" target="_blank">Jóvenes a Programar</a></5>
+        </div>
+        <div>
+            <p class="text-secondary text-center">©copyright 2023</p>
+        </div>
+        
+    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
