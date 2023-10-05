@@ -82,3 +82,24 @@ const hideTextButtons = document.querySelectorAll('[id^="hideText_btn"]');
 hideTextButtons.forEach(button => {
     button.addEventListener('click', toggleText);
 });
+
+function comprar() {
+    const nombreCliente = document.getElementById("nombre").value;
+    const rutCliente = document.getElementById("rut").value;
+    const tipoCliente = document.getElementById("tipoCliente").value;
+
+    // Verifica si el cliente es un CONSUMIDOR FINAL o EMPRESA
+    if (tipoCliente === "CONSUMIDOR_FINAL") {
+        // Procesar compra para un CONSUMIDOR FINAL
+        alert(`Compra realizada por ${nombreCliente} (CONSUMIDOR FINAL)`);
+    } else if (tipoCliente === "EMPRESA" && rutCliente.trim() !== "") {
+        // Procesar compra para una EMPRESA con RUT
+        alert(`Compra realizada por ${nombreCliente} (RUT: ${rutCliente})`);
+    } else {
+        // Cliente EMPRESA sin RUT proporcionado
+        alert("Por favor, ingrese un RUT válido para clientes EMPRESA.");
+    }
+
+    // Vaciar el carrito después de la compra
+    vaciarCarrito();
+}

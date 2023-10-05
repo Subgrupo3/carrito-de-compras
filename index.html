@@ -14,7 +14,7 @@
     </header>
     <main>
     <!-- Carrito de compras -->
-    <div class="container mt-4">
+    <div class="container">
         <div class="row py-5">
             
             <!-- Catálogo de productos -->
@@ -55,23 +55,40 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card bg-dark text-light">
                         <div class="card-body text-center">
                             <h2 class="card-title">Carrito de Compras</h2>
-                            <ul id="carrito" class="list-group">
-                            </ul>
-                            <h4>Total: $<span id="total">0.00</span></h4>
-                            <div class="row justify-content-center">
-                                <div class="col-6 mb-2">    
-                                    <button class="btn btn-danger btn-block" onclick="vaciarCarrito()">Vaciar Carrito</button>
+                            <form id="formularioCompra">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre del Cliente:</label>
+                                    <input type="text" class="form-control" id="nombre" required>
                                 </div>
-                                <div class="col-6 mb-2">
-                                    <button class="btn btn-success btn-block">Comprar</button>
+                                <div class="form-group">
+                                    <label for="rut">RUT del Cliente (opcional):</label>
+                                    <input type="text" class="form-control" id="rut">
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <label for="tipoCliente">Tipo de Cliente:</label>
+                                    <select class="form-control" id="tipoCliente">
+                                        <option value="CONSUMIDOR_FINAL">CONSUMIDOR FINAL</option>
+                                        <option value="EMPRESA">EMPRESA</option>
+                                    </select>
+                                </div>
+                                <ul id="carrito" class="list-group"></ul>
+                                <h4>Total: $<span id="total">0.00</span></h4>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 mb-2">
+                                        <button class="btn btn-danger btn-block" onclick="vaciarCarrito()">Vaciar Carrito</button>
+                                    </div>
+                                    <div class="col-6 mb-2">
+                                        <button class="btn btn-success btn-block" onclick="comprar()">Comprar</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+                
                 
                 </div>
                 
