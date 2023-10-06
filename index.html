@@ -5,56 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda en línea</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="mt-3">ElectroTech</h1>
-    <h2>Productos</h2>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Tienda en Línea</a>
-    </nav>
-    
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Catálogo de productos -->
-            <div class="col-md-8">
-                <h2>Catálogo de Productos</h2>
-                <div class="card">
-                    <img id="imgCelular" class="rounded" src="https://depor.com/resizer/CBA735sYQcxBvQqk0z47ZVqw4cI=/1200x675/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B42EPAPPUJFKDKHE54NSRKK2CA.jpg" width="50%"><br>
-                    <div class="card-body"  id="celular">
-                            <h2 id="nombreCelular" class="card-title">Celular</h2>
-                            <p id="descripcionCelular" class="card-text">Con el respaldo de una serie de tecnologías de desarrollo propio y algorítmos de optimización, brinda 36 meses de un excelente rendimiento contínuo y fluído.</p>
-                            <p id="precioCelular" class="card-text">US$1500</p>
-                            <button id="agregarCelular" class="btn btn-primary" onclick="agregarAlCarrito('Celular', 1500)">Agregar al Carrito</button>
-                    </div>
-                    <img id="imgComputadora" class="rounded" width="50%" src="https://www.apple.com/v/macbook-air/q/images/meta/macbook-air_overview__fugeevgwjuie_og.png?202309261329"><br>
-                    <div id="computadora" class="card-body">
-                        <h2 id="nombreComputadora"  class="card-title">Notebook</h2>
-                        <p id="descripcionComputadora" class="card-text">La notebook es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.</p>
-                        <p id="precioComputadora" class="card-text">US$2000</p>
-                        <button id="agregarComputadora" class="btn btn-primary" onclick="agregarAlCarrito('Computadora', 1500)">Agregar al Carrito</button>
-                    </div>
-                    <img id="imgTablet" class="rounded" width="50%" src="https://istore.gt/wp-content/uploads/2023/02/3EC001117.jpg"><br>
-                    <div id="tablet" class="card-body">
-                        <h2 id="nombreTablet"  class="card-title">Tablet</h2>
-                        <p id="descripcionTablet" class="card-text">Esta tablet es la compañera ideal, con capacidad de sobra para cada una de tus actividades. El diseño delgado, compacto y portátil, con facilidad para sostener en una mano, lo convierte en una combinación perfecta de rendimiento y versatilidad.</p>
-                        <p id="precioTablet" class="card-text">US$800</p>
-                        <button id="agregarTablet" class="btn btn-primary" onclick="agregarAlCarrito('Tablet', 800)">Agregar al Carrito</button>
-                    </div>
-            </div>
+    <!-- Encabezado -->
+    <header class="bg-dark text-light text-center py-4">
+        <h1 class="display-4">Electro<span class="text-warning">T</span>ech</h1>
+    </header>
+    <main>
+    <!-- Carrito de compras -->
+    <div class="container">
+        <div class="row py-5">
             
-            <!-- Carrito de compras -->
-            <div class="col-md-4">
-                <h2>Carrito de Compras</h2>
-                <ul id="carrito" class="list-group">
-                </ul>
-                <h4>Total: $<span id="total">0.00</span></h4>
-                <button class="btn btn-success" onclick="vaciarCarrito()">Vaciar Carrito</button>
+            <!-- Catálogo de productos -->
+            <div class="col-md-12">
+                <div class="card-deck">
+                    <div class="col-md-12 text-center">
+                        <h2 class="text-center">Catálogo de Productos</h2>
+                    </div>
+                    
+                   <!-- Producto 1 -->
+                   <div class="card d-flex">
+                    <img class="card-img-top" src="https://depor.com/resizer/CBA735sYQcxBvQqk0z47ZVqw4cI=/1200x675/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B42EPAPPUJFKDKHE54NSRKK2CA.jpg" alt="Celular">
+                    <div class="card-body flex-column">
+                        <h2 class="card-title">Celular</h2>
+                        <p class="card-text">Con el respaldo de una serie de tecnologías de desarrollo propio y algorítmos de optimización<span class="hide" id="hideText_1"> ,brinda 36 meses de un excelente rendimiento contínuo y fluído.</span><button class="mx-1 text-warning" id="hideText_btn_1">Ver más</button></p>
+                        <p class="card-text">US$1500</p>
+                        <button class="btn btn-primary" onclick="agregarAlCarrito('Celular', 1500)">Agregar al Carrito</button>
+                    </div>
+                </div>
+                <!-- Producto 2 -->
+                <div class="card d-flex">
+                    <img class="card-img-top" src="https://www.apple.com/v/macbook-air/q/images/meta/macbook-air_overview__fugeevgwjuie_og.png?202309261329" alt="Notebook">
+                    <div class="card-body flex-column">
+                        <h2 class="card-title">Notebook</h2>
+                        <p class="card-text">La notebook es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el <span class="hide" id="hideText_2"> escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.</span><button class="mx-1 text-warning" id="hideText_btn_2">Ver más</button></p>
+                        <p class="card-text">US$2000</p>
+                        <button class="btn btn-primary" onclick="agregarAlCarrito('Notebook', 2000)">Agregar al Carrito</button>
+                    </div>
+                </div>
+                <!-- Producto 3 -->
+                <div class="card d-flex">
+                    <img class="card-img-top" src="https://istore.gt/wp-content/uploads/2023/02/3EC001117.jpg" alt="Tablet">
+                    <div class="card-body flex-column">
+                        <h2 class="card-title">Tablet</h2>
+                        <p class="card-text">Esta tablet es la compañera ideal, con capacidad de sobra para cada una de tus actividades. <span class="hide" id="hideText_3"> El diseño delgado, compacto y portátil, con facilidad para sostener en una mano, lo convierte en una combinación perfecta de rendimiento y versatilidad.</span> <button class="mx-1 text-warning" id="hideText_btn_3">Ver más</button></p>
+                        <p class="card-text">US$800</p>
+                        <button class="btn btn-primary" onclick="agregarAlCarrito('Tablet', 800)">Agregar al Carrito</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <h2 class="card-title">Carrito de Compras</h2>
+                            <form id="formularioCompra">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre del Cliente:</label>
+                                    <input type="text" class="form-control" id="nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rut">RUT del Cliente (opcional):</label>
+                                    <input type="text" class="form-control" id="rut">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tipoCliente">Tipo de Cliente:</label>
+                                    <select class="form-control" id="tipoCliente">
+                                        <option value="CONSUMIDOR_FINAL">CONSUMIDOR FINAL</option>
+                                        <option value="EMPRESA">EMPRESA</option>
+                                    </select>
+                                </div>
+                                <ul id="carrito" class="list-group"></ul>
+                                <h4>Total: $<span id="total">0.00</span></h4>
+                                <div class="row justify-content-center">
+                                    <div class="col-6 mb-2">
+                                        <button class="btn btn-danger btn-block" onclick="vaciarCarrito()">Vaciar Carrito</button>
+                                    </div>
+                                    <div class="col-6 mb-2">
+                                        <button class="btn btn-success btn-block" onclick="comprar()">Comprar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                </div>
+                
             </div>
         </div>
     </div>
+</main>
+    <footer class="text-muted bg-dark py-2">
+        <div class="container d-flex justify-content-between align-items-center mt-3">
+          <h5 class="text-light text-center mx-auto">Este sitio forma parte de <a class="text-warning" href="https://jovenesaprogramar.edu.uy/" target="_blank">Jóvenes a Programar</a></5>
+        </div>
+        <div>
+            <p class="text-secondary text-center">©copyright 2023</p>
+        </div>
+        
+    </footer>
     
-   
     <script src="script.js"></script>
 </body>
 </html>
